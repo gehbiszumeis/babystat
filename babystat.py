@@ -11,7 +11,7 @@ class Child:
         Parameters
         ----------
         gender : str
-            The gender of the animal. Either 'boy' or 'girl'. Controls which
+            The gender of the animal. Either 'male' or 'female'. Controls which
             WHO data is downloaded
         birthday : str
             The birthday of the child in the format YYYY-mm-dd
@@ -21,7 +21,7 @@ class Child:
         Raises
         ------
         ValueError
-            If gender is neither 'boy' nor 'girl.
+            If gender is neither 'male' nor 'female.
         """
         self._gender = gender
         self._birthday = birthday
@@ -30,20 +30,20 @@ class Child:
         print(f'retrieving WHO child growth data for {gender}s ...')
 
         # Retrieve WHO child growth data from WHO web page
-        if gender == 'boy':
+        if gender == 'male':
 
             url = 'http://www.who.int/childgrowth/standards/wfa_boys_z_exp.txt'
             self._growth_data = pd.read_csv(url, sep='\t')
             print('done.')
 
-        elif gender == 'girl':
+        elif gender == 'female':
 
             url = 'http://www.who.int/childgrowth/standards/wfa_girls_z_exp.txt'
             self._growth_data = pd.read_csv(url, sep='\t')
             print('done.')
 
         else:
-            raise ValueError('child must be \'boy\' or \'girl\'')
+            raise ValueError('child must be \'male\' or \'female\'')
 
     def __str__(self):
         """
@@ -58,7 +58,7 @@ class Child:
                f'Gender: {self._gender}'
 
     @staticmethod
-    def weight_data(weight_file):
+    def import_weight_data(weight_file):
         """
         Imports weight data of child from *.csv file. File needs following
         format:
@@ -91,7 +91,7 @@ class Child:
                                   names=['date', 'measured_weight'],
                                   parse_dates=['date'],
                                   date_parser=lambda date: pd.to_datetime(
-                                      date, format='%Y.%m-%d'))
+                                      date, format='%Y-%m-%d'))
 
         # Construct elapsed days vector and add to dataframe
         weight_data['life_days'] = weight_data['date'] - weight_data['date'][0]
@@ -141,7 +141,7 @@ class Child:
         ----------
         weight_offset : float
             difference from child birth weight to WHO mean weight at life day
-            zero
+            zero.
 
         Returns
         ------
