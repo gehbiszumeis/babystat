@@ -1,8 +1,10 @@
-# babystat
-Tool calculating statistics about newborn/baby properties (weight, etc...) and including comparison to and evaluation with large WHO newborn database
+babystat
+==============================
 
-Copyright (c) 2018, Christopher Geis (ChG, geisch).
+Tool calculating statistics about newborn/baby properties (weight, etc...) and including comparison to and evaluation with large WHO newborn database.
+
+Copyright (c) 2018, Christopher Geis (ChG, @gehbiszumeis).
 
 This project is licensed under the terms of the [GNU General Public License v3.0](LICENSE).
 
-Contact: christopher.geis@gmx.de
+Contact: gehbiszumeis@gmx.de
