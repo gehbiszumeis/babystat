@@ -1,4 +1,8 @@
-__version__ = '0.1.0'
+__all__ = ['Child']
+__author__ = 'Christopher Geis (ChG)'
+__copyright__ = 'Copyright 2018'
+__license__ = 'GPL'
+__version__ = '0.1.1'
 
 import pandas as pd
 import numpy as np
