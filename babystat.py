@@ -22,7 +22,7 @@ class Child:
         birthday : str
             The birthday of the child in the format YYYY-mm-dd
         name : str, optional
-            The number of legs the animal (default is 'child')
+            The name of the child (default is 'child')
 
         Raises
         ------
